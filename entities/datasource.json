@@ -1,0 +1,84 @@
+{
+  "name": "DataSource",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Data source name"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "api",
+        "rss",
+        "csv",
+        "json",
+        "database",
+        "google_ads",
+        "google_search_console",
+        "semrush"
+      ],
+      "description": "Type of data source"
+    },
+    "url": {
+      "type": "string",
+      "description": "Data source URL or endpoint"
+    },
+    "api_key": {
+      "type": "string",
+      "description": "API key for authentication"
+    },
+    "oauth_token": {
+      "type": "string",
+      "description": "OAuth access token for services like Google Search Console"
+    },
+    "refresh_token": {
+      "type": "string",
+      "description": "OAuth refresh token"
+    },
+    "refresh_interval": {
+      "type": "string",
+      "enum": [
+        "hourly",
+        "daily",
+        "weekly",
+        "manual"
+      ],
+      "default": "daily",
+      "description": "How often to refresh data"
+    },
+    "mapping": {
+      "type": "object",
+      "description": "Field mapping configuration"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether data source is active"
+    },
+    "schema": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of column names from the data source"
+    },
+    "data": {
+      "type": "string",
+      "description": "JSON string of the data array"
+    },
+    "record_count": {
+      "type": "number",
+      "default": 0
+    },
+    "last_sync": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last successful data sync"
+    }
+  },
+  "required": [
+    "name",
+    "type"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "name": "Post",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Post title"
+    },
+    "content": {
+      "type": "string",
+      "description": "Post content"
+    },
+    "keyword": {
+      "type": "string",
+      "description": "Target keyword"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "generating",
+        "ready",
+        "published",
+        "failed"
+      ],
+      "default": "draft",
+      "description": "Post status"
+    },
+    "destination_id": {
+      "type": "string",
+      "description": "ID of the destination"
+    },
+    "data_source_id": {
+      "type": "string",
+      "description": "ID of the data source used"
+    },
+    "campaign_id": {
+      "type": "string",
+      "description": "ID of the campaign this post belongs to"
+    },
+    "video_url": {
+      "type": "string",
+      "description": "Generated video URL"
+    },
+    "document_url": {
+      "type": "string",
+      "description": "Generated document URL"
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the post was published"
+    },
+    "credits_used": {
+      "type": "number",
+      "default": 1,
+      "description": "Number of credits used"
+    },
+    "performance_data": {
+      "type": "object",
+      "description": "Performance metrics"
+    }
+  },
+  "required": [
+    "title",
+    "keyword"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Credit",
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "number",
+      "description": "Number of credits"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "purchase",
+        "weekly_free",
+        "bonus",
+        "refund"
+      ],
+      "description": "Type of credit transaction"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the credit transaction"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When credits expire"
+    },
+    "used": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether credits have been used"
+    }
+  },
+  "required": [
+    "amount",
+    "type"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Destination",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Destination name"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "website",
+        "blog",
+        "social_media",
+        "email",
+        "api",
+        "linkedin",
+        "brevo"
+      ],
+      "description": "Type of destination"
+    },
+    "url": {
+      "type": "string",
+      "description": "Destination URL or endpoint"
+    },
+    "api_key": {
+      "type": "string",
+      "description": "API key for authentication"
+    },
+    "settings": {
+      "type": "object",
+      "description": "Additional settings for the destination"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether destination is active"
+    }
+  },
+  "required": [
+    "name",
+    "type"
+  ]
+}

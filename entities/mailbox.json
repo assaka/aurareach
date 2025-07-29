@@ -1,0 +1,74 @@
+{
+  "name": "Mailbox",
+  "type": "object",
+  "properties": {
+    "email_address": {
+      "type": "string",
+      "description": "The email address of the mailbox"
+    },
+    "provider": {
+      "type": "string",
+      "enum": [
+        "gmail",
+        "outlook",
+        "brevo",
+        "custom_smtp"
+      ],
+      "description": "Email service provider"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "connecting",
+        "active",
+        "warming_up",
+        "error"
+      ],
+      "default": "connecting",
+      "description": "Current status of the mailbox"
+    },
+    "warmup_settings": {
+      "type": "object",
+      "properties": {
+        "is_enabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "emails_per_day": {
+          "type": "number",
+          "default": 30
+        },
+        "reply_rate": {
+          "type": "number",
+          "default": 45
+        }
+      },
+      "description": "Settings for the automated warmup process"
+    },
+    "analytics": {
+      "type": "object",
+      "properties": {
+        "health_score": {
+          "type": "number",
+          "default": 75
+        },
+        "emails_sent_today": {
+          "type": "number",
+          "default": 0
+        },
+        "landed_in_inbox": {
+          "type": "number",
+          "default": 0
+        },
+        "saved_from_spam": {
+          "type": "number",
+          "default": 0
+        }
+      }
+    }
+  },
+  "required": [
+    "email_address",
+    "provider"
+  ]
+}

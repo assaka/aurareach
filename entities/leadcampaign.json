@@ -1,0 +1,76 @@
+{
+  "name": "LeadCampaign",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Campaign name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Campaign description"
+    },
+    "target_criteria": {
+      "type": "object",
+      "description": "Lead targeting criteria"
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Keywords to monitor for intent signals"
+    },
+    "tech_filters": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Required or excluded technologies"
+    },
+    "company_size_filter": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Target company sizes"
+    },
+    "industry_filter": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Target industries"
+    },
+    "location_filter": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Target locations"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "paused",
+        "completed"
+      ],
+      "default": "active",
+      "description": "Campaign status"
+    },
+    "leads_found": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of leads found"
+    },
+    "qualified_leads": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of qualified leads"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

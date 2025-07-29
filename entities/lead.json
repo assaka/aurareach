@@ -1,0 +1,101 @@
+{
+  "name": "Lead",
+  "type": "object",
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "description": "Company name"
+    },
+    "website": {
+      "type": "string",
+      "description": "Company website URL"
+    },
+    "industry": {
+      "type": "string",
+      "description": "Company industry"
+    },
+    "company_size": {
+      "type": "string",
+      "enum": [
+        "1-10",
+        "11-50",
+        "51-200",
+        "201-1000",
+        "1000+"
+      ],
+      "description": "Company size range"
+    },
+    "location": {
+      "type": "string",
+      "description": "Company location"
+    },
+    "revenue": {
+      "type": "string",
+      "description": "Estimated annual revenue"
+    },
+    "contact_name": {
+      "type": "string",
+      "description": "Primary contact name"
+    },
+    "contact_title": {
+      "type": "string",
+      "description": "Contact job title"
+    },
+    "contact_email": {
+      "type": "string",
+      "description": "Contact email address"
+    },
+    "contact_linkedin": {
+      "type": "string",
+      "description": "Contact LinkedIn profile URL"
+    },
+    "tech_stack": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Technologies used by the company"
+    },
+    "social_intents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Recent social media activities indicating buying intent"
+    },
+    "intent_score": {
+      "type": "number",
+      "description": "Lead quality score (0-100)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "contacted",
+        "interested",
+        "meeting_booked",
+        "not_interested",
+        "unqualified",
+        "converted"
+      ],
+      "default": "new",
+      "description": "Lead status in the sales pipeline"
+    },
+    "source": {
+      "type": "string",
+      "description": "Lead generation source"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the lead"
+    },
+    "last_activity": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last recorded activity"
+    }
+  },
+  "required": [
+    "company_name"
+  ]
+}

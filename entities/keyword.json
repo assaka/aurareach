@@ -1,0 +1,78 @@
+{
+  "name": "Keyword",
+  "type": "object",
+  "properties": {
+    "keyword": {
+      "type": "string",
+      "description": "Target keyword phrase"
+    },
+    "search_volume": {
+      "type": "number",
+      "description": "Monthly search volume"
+    },
+    "cpc": {
+      "type": "number",
+      "description": "Cost per click in USD"
+    },
+    "competition": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "medium",
+      "description": "Competition level"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "medium",
+      "description": "SEO difficulty level"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "paused",
+        "archived"
+      ],
+      "default": "active",
+      "description": "Keyword status"
+    },
+    "category": {
+      "type": "string",
+      "description": "Keyword category or theme"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the keyword"
+    },
+    "trend": {
+      "type": "string",
+      "enum": [
+        "rising",
+        "stable",
+        "declining"
+      ],
+      "default": "stable",
+      "description": "Search trend"
+    },
+    "opportunity_score": {
+      "type": "number",
+      "description": "Calculated opportunity score (0-100)"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last data update"
+    }
+  },
+  "required": [
+    "keyword"
+  ]
+}

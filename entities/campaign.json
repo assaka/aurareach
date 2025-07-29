@@ -1,0 +1,86 @@
+{
+  "name": "Campaign",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the ad campaign"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "Google Ads",
+        "Facebook Ads",
+        "LinkedIn Ads",
+        "Twitter Ads",
+        "Other"
+      ],
+      "description": "The advertising platform"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "paused",
+        "completed",
+        "draft"
+      ],
+      "default": "draft",
+      "description": "Current status of the campaign"
+    },
+    "budget": {
+      "type": "number",
+      "description": "Total budget for the campaign"
+    },
+    "spend": {
+      "type": "number",
+      "default": 0,
+      "description": "Amount of the budget that has been spent"
+    },
+    "impressions": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of times the ad was shown"
+    },
+    "clicks": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of clicks on the ad"
+    },
+    "conversions": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of conversions from the campaign"
+    },
+    "cpc": {
+      "type": "number",
+      "description": "Average Cost Per Click",
+      "default": 0
+    },
+    "ctr": {
+      "type": "number",
+      "description": "Click-Through Rate (%)",
+      "default": 0
+    },
+    "conversion_rate": {
+      "type": "number",
+      "description": "Conversion Rate (%)",
+      "default": 0
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Campaign start date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Campaign end date"
+    }
+  },
+  "required": [
+    "name",
+    "source",
+    "budget"
+  ]
+}

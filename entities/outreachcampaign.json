@@ -1,0 +1,83 @@
+{
+  "name": "OutreachCampaign",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the outreach campaign"
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "linkedin",
+        "email",
+        "sms"
+      ],
+      "default": "linkedin",
+      "description": "The platform for the outreach"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "paused",
+        "completed"
+      ],
+      "default": "paused"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "connection_request",
+              "message",
+              "inmail",
+              "profile_view"
+            ]
+          },
+          "delay_days": {
+            "type": "number",
+            "description": "Days to wait after previous step"
+          },
+          "message_template": {
+            "type": "string",
+            "description": "Message template with placeholders like {{firstName}}"
+          }
+        }
+      },
+      "description": "Sequence of steps for the outreach campaign"
+    },
+    "leads": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of Lead IDs in this campaign"
+    },
+    "analytics": {
+      "type": "object",
+      "properties": {
+        "sent": {
+          "type": "number",
+          "default": 0
+        },
+        "connected": {
+          "type": "number",
+          "default": 0
+        },
+        "replied": {
+          "type": "number",
+          "default": 0
+        }
+      }
+    }
+  },
+  "required": [
+    "name",
+    "steps"
+  ]
+}

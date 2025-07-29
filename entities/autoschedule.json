@@ -1,0 +1,73 @@
+{
+  "name": "AutoSchedule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Schedule name"
+    },
+    "keyword_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of keyword IDs to target"
+    },
+    "destination_id": {
+      "type": "string",
+      "description": "Default destination for generated content"
+    },
+    "data_source_id": {
+      "type": "string",
+      "description": "Default data source to use"
+    },
+    "frequency": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "weekly",
+        "bi-weekly",
+        "monthly"
+      ],
+      "default": "weekly",
+      "description": "Generation frequency"
+    },
+    "day_of_week": {
+      "type": "number",
+      "description": "Day of week (0=Sunday, 6=Saturday)"
+    },
+    "time_of_day": {
+      "type": "string",
+      "description": "Time to run (HH:MM format)"
+    },
+    "include_video": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether to generate video content"
+    },
+    "include_document": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether to generate documents"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether schedule is active"
+    },
+    "last_run": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last execution time"
+    },
+    "next_run": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Next scheduled execution"
+    }
+  },
+  "required": [
+    "name",
+    "frequency"
+  ]
+}

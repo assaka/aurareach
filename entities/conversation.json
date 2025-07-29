@@ -1,0 +1,62 @@
+{
+  "name": "Conversation",
+  "type": "object",
+  "properties": {
+    "lead_id": {
+      "type": "string",
+      "description": "ID of the lead this conversation is with"
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "linkedin",
+        "email",
+        "sms"
+      ],
+      "description": "The platform of the conversation"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "unread",
+        "read",
+        "archived"
+      ],
+      "default": "unread"
+    },
+    "last_message_preview": {
+      "type": "string"
+    },
+    "last_message_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sender": {
+            "type": "string",
+            "enum": [
+              "user",
+              "lead"
+            ]
+          },
+          "content": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "lead_id",
+    "platform",
+    "messages"
+  ]
+}
