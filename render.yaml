@@ -4,7 +4,7 @@ services:
     name: aura-seo-app
     env: node
     plan: starter
-    buildCommand: npm ci && npx vite build && cd backend && npm ci
+    buildCommand: chmod +x build.sh && ./build.sh
     startCommand: cd backend && npm start
     healthCheckPath: /health
     envVars:
