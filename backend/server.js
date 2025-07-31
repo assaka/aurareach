@@ -40,7 +40,9 @@ const limiter = rateLimit({
 // Middleware
 app.use(helmet());
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: process.env.NODE_ENV === 'production' 
+    ? ['https://your-domain.com', 'https://aura-seo-app.onrender.com']
+    : 'http://localhost:5173',
   credentials: true
 }));
 app.use(compression());
